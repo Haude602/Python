@@ -1,0 +1,112 @@
+Regular Expression:(vikrant-panjiar:don is a regular expresssion)
+
+We must import  module re
+
+re.search() ->  to see if a string matches a regular expression similar to find()
+re.findall()  -> to extract portion of string that matches ur regular expression
+
+^        matches begiginning of line
+$        matches end of line
+.        matches any character
+\s       matches whitespace
+\S       Matches any non-whitespace character
+*        repeats a chracter zero or more times
+*?       repeats a character zero or more times(non greedy)
++        repeats a character one or more times
++?       repeats a character one or more times(non greedy)
+[aeiou]    matches a singl echaracter in the listed set
+[^XYZ]     matches a single character not in the listed set
+[a-z0-9]   a set of character can include a range
+(          indicates where string extraction is to start
+)          indicates where string extraction is to end
+
+_________________________________________________________________
+
+
+USES:
+1)
+
+import re
+....
+.... 
+for line in lines:
+if re.search('^From:',line)     #see if line starts with From: as
+				# [if line.startswith('From:):]
+print(line)
+
+
+2)
+
+if re.search('^X.*:,line)    #see if starts with X ,followed by any character any number of times,
+                        #follwed by :
+                        #for data like 1) X-sieve: CMU sieve 
+                                       2) X-sieve is behind schedule
+
+Note: If we don't wanna saecrh for option of above data
+
+if re.search('^X-\S+:',line):   #see if starts with X followed by - with
+                                #no whitespace(either one time or more time)
+				#followed by :
+_______________________________________________________________________________
+
+
+EXTRACTING DATA:
+
+1)
+import re
+x='my 2 fav numbers are 29 and 40'
+y=re.findall('[0-9]+',x)     #gives digits between 0 to 9 if they
+				# occur 1 or more number of times in x
+print(y)
+
+output:['2','29','40']   Note:output is list of string nt numbers
+
+but,
+y=re.findall('[AEIOU]+',x)
+
+output=[] i.e. empty list as there is no upper case vowel
+___________________________________________________________________
+2)
+x='From: Using the:'
+y=re.findall('^F.+:',x)  #get list of string starting from F followed by
+			 #any character one or more times followed by:
+output:  ['From: Using the :'] Note: not only ['From:']
+
+but,
+
+y=re.findall('^F.+?',x]  #F followed by anynumber of character but nt greedy(.+?)
+			 i.e. shortest number of charcters that ends with:
+
+____________________________________________________________________________
+
+x='From stephen.mark@uct.ac.za sat Jan 5 09:14:16 2008'
+
+y=re.findall('\S+@\S+',x)  #one or more non whitespace character
+			   #followed by @ fllowed by one or more non white space characer
+print(y)
+
+['stephen.mark@uct.ac.za']
+
+also, Using parantehesis include required portion checking other things
+
+Y=re.findall('^From (\S+@\S)',x)   #see if the line starts with From followed by
+				   #one whitespace one whitespace
+				   #extracts only \S+@\S
+print(y)
+output:  ['stephen.mark@uct.ac.za']   Note:same as above
+___________________________________________________________________________
+
+y=re.findall('^From .*@([^ ]*)',x)  #[^ ]* Extracts non blank characters occuring
+				   #any number of times
+Output: uct.ac.za
+
+__________________________________________________
+If meaningful sign doing someting have to be matched itself ..
+If you wanna use special character just ass a character then use \ as prefix
+
+x='WE justreceived $10.00 for cookies.'
+y=re.findall('\$[0-9.]+',x)   # looks for starting with dollar sign 
+			      #Followed by one or more digits and dots 
+
+Output:  ['$10.00']
+ 
