@@ -1,0 +1,7 @@
+XML-eXtensible markup language  (modern wire format is json)
+
+	-purpose is to help informative systems share structured data
+	-a wire format on which every language agree nn understand java python etc
+ 	(ex:SI system for units on which everone can agree)
+As a process we can see:
+[python -> serialization -> xml -> de-seriallization ->java]
