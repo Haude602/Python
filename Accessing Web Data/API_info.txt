@@ -1,0 +1,7 @@
+API-If we are going to make our own application and use services of
+    other application we need to know their API
+	-Producer of the API is the one who has data,exports the API and defines API
+	-Consumer is the one that reads the docmentation of the API ,write some code and then compiles 
+	 with the rules of the API
+	-To use API of different web app the code format is also different 
+	_Ex: to use twitter api and api keys we use different Python code than to use google API
