@@ -1,0 +1,46 @@
+Database : Is a systematic(organised) collection of data like names age, image,etc
+DBMS=Database Management System is a collection of programs which enables users to access database,manipulate
+data and help in representation of data
+SQL=Structured Query Language 
+1)Standard language to communicate with realtional Database(Which has tabular method of storing data eg:MySQL,Oracle,etc) 
+2)CRUD-Used to create, retrieve, update and delete data in database
+
+SQlite -> DBMS which doesn't require network, sevrerless,self contained(Can be intalled as library) and
+ doesn't require client server network,etc. Small and can be used any mbile devices
+
+DB browser for SQLite: open-source database manager that import CSV files. Sqlite browser allows to directly
+manipulate sqlite files
+
+Dowload 'DB browser for SQLite" and install it
+
+Let's go...........
+
+-click on new database and save it on required location
+-click on 'execute SQL'
+
+To create table named 'Users' with 'name' and 'email' as column with max string size 128
+1)CREATE TABLE Users(name VARCHAR(128),email VARCHAR(128))
+2)click onplay button or execute button
+Go to browse data and see. You can also add data by clicking on new records there and typing there data
+Note: You can see SQL log
+
+Insert statement:
+
+1)INSERT INTO Users(name,email) Values ("vikrant","bikrantpanjiyar@gmail.com") and click on play button
+
+Insert statement:
+
+1)DELETE FROM Users WHERE email="bikrantpanjiyar@gmail.com"
+
+Select statement:
+1)To select all
+SELECT * FROM Users (*=all)
+
+2)To select all where email="bikrantpanjiyar@gmail.com"
+SELECT * FROM Users WHERE email="bikrantpanjiyar@gmail.com"
+
+ORDER BY statement:
+SELECT * FROM Users ORDER bY email
+
+
+
