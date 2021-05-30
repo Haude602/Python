@@ -14,7 +14,7 @@ for y in x:
     if y not in l:
         l.append(y)
 email_user = 'veestudioofficial@gmail.com' # The Id from which mail will be sent
-email_password = 'musicenthusiast602'  #password of ID from which mail will be sent (It is only with u in ur IDE so safe to use totally)
+email_password = '******'  #password of ID from which mail will be sent (It is only with u in ur IDE so safe to use totally)
 count=0
 for items in l:
     
